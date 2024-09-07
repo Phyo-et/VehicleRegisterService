@@ -1,5 +1,6 @@
 package com.mainapp;
 
+import com.dao.VehicleDao;
 import com.model.Vehicle;
 import com.service.CarRegisterService;
 import com.service.MotorcycleRegisterService;
@@ -19,7 +20,7 @@ public class Main {
             getVehicleInfo();
 
         for (int i = 0; i< Vehicle.getCount(); i++){
-            service.vehicles[i].displayInfo();
+            VehicleDao.getAll()[i].displayInfo();
             System.out.println("\n");
         }
     }

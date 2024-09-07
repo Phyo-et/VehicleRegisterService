@@ -1,5 +1,6 @@
 package com.service;
 
+import com.dao.VehicleDao;
 import com.model.Car;
 import com.model.Motorcycle;
 import com.model.Truck;
@@ -10,7 +11,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class VehicleRegisterService {
-    public static Vehicle[] vehicles= new Vehicle[100];
+
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
     private String brand;
@@ -19,7 +20,7 @@ public class VehicleRegisterService {
     public void register() throws IOException {
         getCommonInfo();
         Vehicle vehicle = getSpecificInfo();
-        vehicles[Vehicle.getCount()-1]=vehicle;
+        VehicleDao.create(vehicle);
 
     }
 
